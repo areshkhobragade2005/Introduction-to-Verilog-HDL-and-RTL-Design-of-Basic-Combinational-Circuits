@@ -1,0 +1,12 @@
+module full_adder (
+    input A,
+    input B,
+    input Cin,       // Carry input
+    output Sum,
+    output Cout      // Carry output
+);
+
+assign Sum  = A ^ B ^ Cin;                     // XOR chain for sum
+assign Cout = (A & B) | (B & Cin) | (A & Cin); // Majority logic for carry
+
+endmodule
